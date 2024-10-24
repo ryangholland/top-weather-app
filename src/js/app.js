@@ -1,7 +1,8 @@
 import loadSearchBtn from "./components/searchBtn";
+import getWeather from "./utils/getWeather";
 
 function init() {
-  loadSearchBtn();
+  getWeather("Trinity, FL");
 }
 
 export default init;
