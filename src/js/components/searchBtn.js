@@ -8,7 +8,7 @@ function loadSearchBtn() {
   searchBtn.classList.add("btn-primary")
   searchBtn.textContent = "Get Weather"
 
-  searchBtn.addEventListener("click", () => getWeather("Clearwater, FL"));
+  searchBtn.addEventListener("click", () => getWeather("Clearwater, Florida"));
 
   mainContainer.append(searchBtn);
 }

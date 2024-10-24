@@ -1,15 +1,42 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Bootstrap w/ Vite</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>U.S. Weather</title>
     <script type="module" src="./js/main.js"></script>
   </head>
   <body>
-    <div class="container py-4 px-3 mx-auto" id="main-container">
-      <h1>Weather!</h1>
-      
-    </div>
+    <header class="py-3 bg-dark">
+      <div class="container">
+        <div class="row text-center align-items-center gy-3">
+          <div class="col-12 col-md-2">
+            <img
+              src="./assets/logo.webp"
+              alt="U.S. Weather Logo"
+              class="img-thumbnail"
+              width="85px"
+            />
+          </div>
+          <div class="col-12 col-md-8">
+            <div class="input-group d-flex justify-content-center">
+              <input
+                type="text"
+                class="form-control"
+                placeholder="Enter a ZIP code or a City and State"
+                style="max-width: 350px"
+              />
+              <button class="btn btn-primary" type="button">Search</button>
+            </div>
+          </div>
+          <div class="col-12 col-md-2">
+            <button class="btn btn-light w-75">
+              <span id="f-deg">&deg;F</span> /
+              <span id="c-deg">&deg;C</span>
+            </button>
+          </div>
+        </div>
+      </div>
+    </header>
   </body>
 </html>
