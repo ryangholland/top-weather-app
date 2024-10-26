@@ -6,7 +6,7 @@
     <title>U.S. Weather</title>
     <script type="module" src="./js/main.js"></script>
   </head>
-  <body>
+  <body class="d-flex flex-column min-vh-100">
     <header class="py-3 bg-dark">
       <div class="container">
         <div class="row text-center align-items-center gy-3">
@@ -38,238 +38,244 @@
         </div>
       </div>
     </header>
-    <main class="py-4">
-      <div class="container">
-        <!-- Basic Today Info -->
-        <!-- Add arrows for 3 screens of hours  -->
-        <!-- 6 > | < 5 > | < 6 -->
-        <div class="row">
-          <div class="col-12 col-md-4 text-center mb-4 mb-md-0">
-            <h2>City</h2>
-            <h3>Conditions</h3>
-            <h1 class="display-1">69&deg;</h1>
-            <h4>L: 58&deg; | H: 72&deg;</h4>
+    <main class="py-4" style="flex: 1">
+      <div id="weather-content" class="">
+        <div class="container">
+          <!-- Basic Today Info -->
+          <!-- Add arrows for 3 screens of hours  -->
+          <!-- 6 > | < 5 > | < 6 -->
+          <div class="row">
+            <div class="col-12 col-md-4 text-center mb-4 mb-md-0">
+              <h2>City</h2>
+              <h3>Conditions</h3>
+              <h1 class="display-1">69&deg;</h1>
+              <h4>L: 58&deg; | H: 72&deg;</h4>
+            </div>
+            <div
+              class="col-12 col-md-8 row d-flex justify-content-center align-items-center"
+            >
+              <div class="col text-center">
+                <p>Now</p>
+                <img src="./assets/logo.webp" class="img" width="50px" />
+                <p>69&deg;</p>
+              </div>
+              <div class="col text-center">
+                <p>7 AM</p>
+                <img src="./assets/logo.webp" class="img" width="50px" />
+                <p>69&deg;</p>
+              </div>
+              <div class="col text-center">
+                <p>8 AM</p>
+                <img src="./assets/logo.webp" class="img" width="50px" />
+                <p>69&deg;</p>
+              </div>
+              <div class="col text-center">
+                <p>9 AM</p>
+                <img src="./assets/logo.webp" class="img" width="50px" />
+                <p>69&deg;</p>
+              </div>
+              <div class="col text-center">
+                <p>10 AM</p>
+                <img src="./assets/logo.webp" class="img" width="50px" />
+                <p>69&deg;</p>
+              </div>
+              <div class="col text-center">
+                <p>11 AM</p>
+                <img src="./assets/logo.webp" class="img" width="50px" />
+                <p>69&deg;</p>
+              </div>
+            </div>
+          </div>
+          <div class="row py-3 mb-2">
+            <div class="col text-center">
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+            </div>
+          </div>
+        </div>
+        <!-- Detailed Today Info -->
+        <div class="bg-dark text-light p-4">
+          <div class="container">
+            <div class="row justify-content-center mb-md-3">
+              <div class="col-12 col-md-2 text-center">
+                <p class="mb-0 text-info">SUNRISE</p>
+                <p>7:10 AM</p>
+              </div>
+              <div class="col-12 col-md-2 text-center">
+                <p class="mb-0 text-info">SUNSET</p>
+                <p>7:10 AM</p>
+              </div>
+              <div class="col-12 col-md-2 text-center">
+                <p class="mb-0 text-info">CHANCE OF RAIN</p>
+                <p>7:10 AM</p>
+              </div>
+              <div class="col-12 col-md-2 text-center">
+                <p class="mb-0 text-info">HUMIDITY</p>
+                <p>7:10 AM</p>
+              </div>
+              <div class="col-12 col-md-2 text-center">
+                <p class="mb-0 text-info">WIND</p>
+                <p>7:10 AM</p>
+              </div>
+            </div>
+            <div class="row justify-content-center">
+              <div class="col-12 col-md-2 text-center">
+                <p class="mb-0 text-info">FEELS LIKE</p>
+                <p>7:10 AM</p>
+              </div>
+              <div class="col-12 col-md-2 text-center">
+                <p class="mb-0 text-info">PRECIPITATION</p>
+                <p>7:10 AM</p>
+              </div>
+              <div class="col-12 col-md-2 text-center">
+                <p class="mb-0 text-info">PRESSURE</p>
+                <p>7:10 AM</p>
+              </div>
+              <div class="col-12 col-md-2 text-center">
+                <p class="mb-0 text-info">VISIBILITY</p>
+                <p>7:10 AM</p>
+              </div>
+              <div class="col-12 col-md-2 text-center">
+                <p class="mb-0 text-info">UV INDEX</p>
+                <p>7:10 AM</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- 7 Day Forecast -->
+        <div class="container p-4 text-center">
+          <h3 class="mb-4">7-Day Forecast</h3>
+          <div class="row justify-content-center border-bottom">
+            <div class="col-3 col-md-2">
+              <p>DAY</p>
+            </div>
+            <div class="col-3 col-md-2">
+              <p>CONDITIONS</p>
+            </div>
+            <div class="col-3 col-md-2">
+              <p>RAIN</p>
+            </div>
+            <div class="col-3 col-md-2">
+              <p>TEMP</p>
+            </div>
           </div>
           <div
-            class="col-12 col-md-8 row d-flex justify-content-center align-items-center"
+            class="row justify-content-center border-bottom align-items-center p-2 text-center"
           >
-            <div class="col text-center">
-              <p>Now</p>
-              <img src="./assets/logo.webp" class="img" width="50px" />
-              <p>69&deg;</p>
+            <div class="col-3 col-md-2">
+              <p class="mb-0">1</p>
             </div>
-            <div class="col text-center">
-              <p>7 AM</p>
+            <div class="col-3 col-md-2">
               <img src="./assets/logo.webp" class="img" width="50px" />
-              <p>69&deg;</p>
             </div>
-            <div class="col text-center">
-              <p>8 AM</p>
-              <img src="./assets/logo.webp" class="img" width="50px" />
-              <p>69&deg;</p>
+            <div class="col-3 col-md-2">
+              <p class="mb-0">50%</p>
             </div>
-            <div class="col text-center">
-              <p>9 AM</p>
-              <img src="./assets/logo.webp" class="img" width="50px" />
-              <p>69&deg;</p>
-            </div>
-            <div class="col text-center">
-              <p>10 AM</p>
-              <img src="./assets/logo.webp" class="img" width="50px" />
-              <p>69&deg;</p>
-            </div>
-            <div class="col text-center">
-              <p>11 AM</p>
-              <img src="./assets/logo.webp" class="img" width="50px" />
-              <p>69&deg;</p>
+            <div class="col-3 col-md-2">
+              <p class="mb-0">60&deg; / 75&deg;</p>
             </div>
           </div>
-        </div>
-        <div class="row py-3 mb-2">
-          <div class="col text-center">
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+          <div
+            class="row justify-content-center border-bottom align-items-center p-2 text-center"
+          >
+            <div class="col-3 col-md-2">
+              <p class="mb-0">2</p>
+            </div>
+            <div class="col-3 col-md-2">
+              <img src="./assets/logo.webp" class="img" width="50px" />
+            </div>
+            <div class="col-3 col-md-2">
+              <p class="mb-0">50%</p>
+            </div>
+            <div class="col-3 col-md-2">
+              <p class="mb-0">60&deg; / 75&deg;</p>
+            </div>
+          </div>
+          <div
+            class="row justify-content-center border-bottom align-items-center p-2 text-center"
+          >
+            <div class="col-3 col-md-2">
+              <p class="mb-0">3</p>
+            </div>
+            <div class="col-3 col-md-2">
+              <img src="./assets/logo.webp" class="img" width="50px" />
+            </div>
+            <div class="col-3 col-md-2">
+              <p class="mb-0">50%</p>
+            </div>
+            <div class="col-3 col-md-2">
+              <p class="mb-0">60&deg; / 75&deg;</p>
+            </div>
+          </div>
+          <div
+            class="row justify-content-center border-bottom align-items-center p-2 text-center"
+          >
+            <div class="col-3 col-md-2">
+              <p class="mb-0">4</p>
+            </div>
+            <div class="col-3 col-md-2">
+              <img src="./assets/logo.webp" class="img" width="50px" />
+            </div>
+            <div class="col-3 col-md-2">
+              <p class="mb-0">50%</p>
+            </div>
+            <div class="col-3 col-md-2">
+              <p class="mb-0">60&deg; / 75&deg;</p>
+            </div>
+          </div>
+          <div
+            class="row justify-content-center border-bottom align-items-center p-2 text-center"
+          >
+            <div class="col-3 col-md-2">
+              <p class="mb-0">5</p>
+            </div>
+            <div class="col-3 col-md-2">
+              <img src="./assets/logo.webp" class="img" width="50px" />
+            </div>
+            <div class="col-3 col-md-2">
+              <p class="mb-0">50%</p>
+            </div>
+            <div class="col-3 col-md-2">
+              <p class="mb-0">60&deg; / 75&deg;</p>
+            </div>
+          </div>
+          <div
+            class="row justify-content-center border-bottom align-items-center p-2 text-center"
+          >
+            <div class="col-3 col-md-2">
+              <p class="mb-0">6</p>
+            </div>
+            <div class="col-3 col-md-2">
+              <img src="./assets/logo.webp" class="img" width="50px" />
+            </div>
+            <div class="col-3 col-md-2">
+              <p class="mb-0">50%</p>
+            </div>
+            <div class="col-3 col-md-2">
+              <p class="mb-0">60&deg; / 75&deg;</p>
+            </div>
+          </div>
+          <div
+            class="row justify-content-center border-bottom align-items-center p-2 text-center"
+          >
+            <div class="col-3 col-md-2">
+              <p class="mb-0">7</p>
+            </div>
+            <div class="col-3 col-md-2">
+              <img src="./assets/logo.webp" class="img" width="50px" />
+            </div>
+            <div class="col-3 col-md-2">
+              <p class="mb-0">50%</p>
+            </div>
+            <div class="col-3 col-md-2">
+              <p class="mb-0">60&deg; / 75&deg;</p>
+            </div>
           </div>
         </div>
       </div>
 
-      <!-- Detailed Today Info -->
-      <div class="bg-dark text-light p-4">
-        <div class="container">
-          <div class="row justify-content-center mb-md-3">
-            <div class="col-12 col-md-2 text-center">
-              <p class="mb-0 text-info">SUNRISE</p>
-              <p>7:10 AM</p>
-            </div>
-            <div class="col-12 col-md-2 text-center">
-              <p class="mb-0 text-info">SUNSET</p>
-              <p>7:10 AM</p>
-            </div>
-            <div class="col-12 col-md-2 text-center">
-              <p class="mb-0 text-info">CHANCE OF RAIN</p>
-              <p>7:10 AM</p>
-            </div>
-            <div class="col-12 col-md-2 text-center">
-              <p class="mb-0 text-info">HUMIDITY</p>
-              <p>7:10 AM</p>
-            </div>
-            <div class="col-12 col-md-2 text-center">
-              <p class="mb-0 text-info">WIND</p>
-              <p>7:10 AM</p>
-            </div>
-          </div>
-          <div class="row justify-content-center">
-            <div class="col-12 col-md-2 text-center">
-              <p class="mb-0 text-info">FEELS LIKE</p>
-              <p>7:10 AM</p>
-            </div>
-            <div class="col-12 col-md-2 text-center">
-              <p class="mb-0 text-info">PRECIPITATION</p>
-              <p>7:10 AM</p>
-            </div>
-            <div class="col-12 col-md-2 text-center">
-              <p class="mb-0 text-info">PRESSURE</p>
-              <p>7:10 AM</p>
-            </div>
-            <div class="col-12 col-md-2 text-center">
-              <p class="mb-0 text-info">VISIBILITY</p>
-              <p>7:10 AM</p>
-            </div>
-            <div class="col-12 col-md-2 text-center">
-              <p class="mb-0 text-info">UV INDEX</p>
-              <p>7:10 AM</p>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- 7 Day Forecast -->
-      <div class="container p-4 text-center">
-        <h3 class="mb-4">7-Day Forecast</h3>
-        <div class="row justify-content-center border-bottom">
-          <div class="col-3 col-md-2">
-            <p>DAY</p>
-          </div>
-          <div class="col-3 col-md-2">
-            <p>CONDITIONS</p>
-          </div>
-          <div class="col-3 col-md-2">
-            <p>RAIN</p>
-          </div>
-          <div class="col-3 col-md-2">
-            <p>TEMP</p>
-          </div>
-        </div>
-        <div
-          class="row justify-content-center border-bottom align-items-center p-2 text-center"
-        >
-          <div class="col-3 col-md-2">
-            <p class="mb-0">1</p>
-          </div>
-          <div class="col-3 col-md-2">
-            <img src="./assets/logo.webp" class="img" width="50px" />
-          </div>
-          <div class="col-3 col-md-2">
-            <p class="mb-0">50%</p>
-          </div>
-          <div class="col-3 col-md-2">
-            <p class="mb-0">60&deg; / 75&deg;</p>
-          </div>
-        </div>
-        <div
-          class="row justify-content-center border-bottom align-items-center p-2 text-center"
-        >
-          <div class="col-3 col-md-2">
-            <p class="mb-0">2</p>
-          </div>
-          <div class="col-3 col-md-2">
-            <img src="./assets/logo.webp" class="img" width="50px" />
-          </div>
-          <div class="col-3 col-md-2">
-            <p class="mb-0">50%</p>
-          </div>
-          <div class="col-3 col-md-2">
-            <p class="mb-0">60&deg; / 75&deg;</p>
-          </div>
-        </div>
-        <div
-          class="row justify-content-center border-bottom align-items-center p-2 text-center"
-        >
-          <div class="col-3 col-md-2">
-            <p class="mb-0">3</p>
-          </div>
-          <div class="col-3 col-md-2">
-            <img src="./assets/logo.webp" class="img" width="50px" />
-          </div>
-          <div class="col-3 col-md-2">
-            <p class="mb-0">50%</p>
-          </div>
-          <div class="col-3 col-md-2">
-            <p class="mb-0">60&deg; / 75&deg;</p>
-          </div>
-        </div>
-        <div
-          class="row justify-content-center border-bottom align-items-center p-2 text-center"
-        >
-          <div class="col-3 col-md-2">
-            <p class="mb-0">4</p>
-          </div>
-          <div class="col-3 col-md-2">
-            <img src="./assets/logo.webp" class="img" width="50px" />
-          </div>
-          <div class="col-3 col-md-2">
-            <p class="mb-0">50%</p>
-          </div>
-          <div class="col-3 col-md-2">
-            <p class="mb-0">60&deg; / 75&deg;</p>
-          </div>
-        </div>
-        <div
-          class="row justify-content-center border-bottom align-items-center p-2 text-center"
-        >
-          <div class="col-3 col-md-2">
-            <p class="mb-0">5</p>
-          </div>
-          <div class="col-3 col-md-2">
-            <img src="./assets/logo.webp" class="img" width="50px" />
-          </div>
-          <div class="col-3 col-md-2">
-            <p class="mb-0">50%</p>
-          </div>
-          <div class="col-3 col-md-2">
-            <p class="mb-0">60&deg; / 75&deg;</p>
-          </div>
-        </div>
-        <div
-          class="row justify-content-center border-bottom align-items-center p-2 text-center"
-        >
-          <div class="col-3 col-md-2">
-            <p class="mb-0">6</p>
-          </div>
-          <div class="col-3 col-md-2">
-            <img src="./assets/logo.webp" class="img" width="50px" />
-          </div>
-          <div class="col-3 col-md-2">
-            <p class="mb-0">50%</p>
-          </div>
-          <div class="col-3 col-md-2">
-            <p class="mb-0">60&deg; / 75&deg;</p>
-          </div>
-        </div>
-        <div
-          class="row justify-content-center border-bottom align-items-center p-2 text-center"
-        >
-          <div class="col-3 col-md-2">
-            <p class="mb-0">7</p>
-          </div>
-          <div class="col-3 col-md-2">
-            <img src="./assets/logo.webp" class="img" width="50px" />
-          </div>
-          <div class="col-3 col-md-2">
-            <p class="mb-0">50%</p>
-          </div>
-          <div class="col-3 col-md-2">
-            <p class="mb-0">60&deg; / 75&deg;</p>
-          </div>
+      <div id="spinner" class="d-none d-flex justify-content-center mt-4">
+        <div class="spinner-border" role="status">
+          <span class="visually-hidden">Loading...</span>
         </div>
       </div>
     </main>
