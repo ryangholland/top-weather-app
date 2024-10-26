@@ -1,8 +1,10 @@
-import loadSearchBtn from "./components/searchBtn";
-import getWeather from "./utils/getWeather";
+import getWeatherData from "./utils/getWeatherData";
 
 function init() {
-  getWeather("Trinity, FL");
+  const testBtn = document.getElementById("test-btn");
+  testBtn.addEventListener("click", () => {
+    getWeatherData("Trinity, FL");
+  });
 }
 
 export default init;

@@ -30,7 +30,7 @@
             </div>
           </div>
           <div class="col-12 col-md-2">
-            <button class="btn btn-light w-75">
+            <button class="btn btn-light w-75" id="test-btn">
               <span id="f-deg">&deg;F</span> /
               <span id="c-deg">&deg;C</span>
             </button>
@@ -46,10 +46,10 @@
           <!-- 6 > | < 5 > | < 6 -->
           <div class="row">
             <div class="col-12 col-md-4 text-center mb-4 mb-md-0">
-              <h2>City</h2>
-              <h3>Conditions</h3>
-              <h1 class="display-1">69&deg;</h1>
-              <h4>L: 58&deg; | H: 72&deg;</h4>
+              <h2 id="city">City</h2>
+              <h3 id="conditions">Conditions</h3>
+              <h1 class="display-1"><span id="current-temp">69</span>&deg;</h1>
+              <h4>L: <span id="low-temp">58</span>&deg; | H: <span id="high-temp">72</span>&deg;</h4>
             </div>
             <div
               class="col-12 col-md-8 row d-flex justify-content-center align-items-center"
@@ -57,37 +57,37 @@
               <div class="col text-center">
                 <p>Now</p>
                 <img src="./assets/logo.webp" class="img" width="50px" />
-                <p>69&deg;</p>
+                <p class="mt-2"><span id="now-temp">69</span>&deg;</p>
               </div>
               <div class="col text-center">
-                <p>7 AM</p>
+                <p id="hour-1">7 AM</p>
                 <img src="./assets/logo.webp" class="img" width="50px" />
-                <p>69&deg;</p>
+                <p class="mt-2"><span id="hour-1-temp">69</span>&deg;</p>
               </div>
               <div class="col text-center">
-                <p>8 AM</p>
+                <p id="hour-2">8 AM</p>
                 <img src="./assets/logo.webp" class="img" width="50px" />
-                <p>69&deg;</p>
+                <p class="mt-2"><span id="hour-2-temp">69</span>&deg;</p>
               </div>
               <div class="col text-center">
-                <p>9 AM</p>
+                <p id="hour-3">9 AM</p>
                 <img src="./assets/logo.webp" class="img" width="50px" />
-                <p>69&deg;</p>
+                <p class="mt-2"><span id="hour-3-temp">69</span>&deg;</p>
               </div>
               <div class="col text-center">
-                <p>10 AM</p>
+                <p id="hour-4">10 AM</p>
                 <img src="./assets/logo.webp" class="img" width="50px" />
-                <p>69&deg;</p>
+                <p class="mt-2"><span id="hour-4-temp">69</span>&deg;</p>
               </div>
               <div class="col text-center">
-                <p>11 AM</p>
+                <p id="hour-5">11 AM</p>
                 <img src="./assets/logo.webp" class="img" width="50px" />
-                <p>69&deg;</p>
+                <p class="mt-2"><span id="hour-5-temp">69</span>&deg;</p>
               </div>
             </div>
           </div>
           <div class="row py-3 mb-2">
-            <div class="col text-center">
+            <div class="col text-center" id="description">
               Lorem ipsum dolor sit amet, consectetur adipisicing elit.
             </div>
           </div>
