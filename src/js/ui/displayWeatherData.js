@@ -1,14 +1,5 @@
-/*
-    City: weatherData.address
-    Conditions: weatherData.currentConditions.conditions
-    Current Temp: weatherData.currentConditions.temp
-    Low: weatherData.days.0.tempmin
-    High: weatherData.days.0.tempmax
-
-
-*/
-
 import getNextHours from "../utils/getNextHours";
+import convertTo12Hour from "../utils/convertTo12Hour";
 
 function displayWeatherData(weatherData) {
   // Basic Today Info
@@ -21,13 +12,12 @@ function displayWeatherData(weatherData) {
 
   city.textContent = weatherData.address;
   conditions.textContent = weatherData.currentConditions.conditions;
-  currentTemp.textContent = weatherData.currentConditions.temp;
-  lowTemp.textContent = weatherData.days[0].tempmin;
-  highTemp.textContent = weatherData.days[0].tempmax;
+  currentTemp.textContent = Math.round(weatherData.currentConditions.temp);
+  lowTemp.textContent = Math.round(weatherData.days[0].tempmin);
+  highTemp.textContent = Math.round(weatherData.days[0].tempmax);
   description.textContent = weatherData.description;
 
   // Next 5 Hours
-  // Refactor this code w/ data IDs and forEach
   const currentHour = new Date().getHours();
   const nextHours = getNextHours(currentHour);
   const hourOne = document.getElementById("hour-1");
@@ -47,12 +37,35 @@ function displayWeatherData(weatherData) {
   hourThree.textContent = nextHours[2];
   hourFour.textContent = nextHours[3];
   hourFive.textContent = nextHours[4];
-  nowTemp.textContent = weatherData.currentConditions.temp;
-  hourOneTemp.textContent = weatherData.days[0].hours[currentHour + 1].temp;
-  hourTwoTemp.textContent = weatherData.days[0].hours[currentHour + 2].temp;
-  hourThreeTemp.textContent = weatherData.days[0].hours[currentHour + 3].temp;
-  hourFourTemp.textContent = weatherData.days[0].hours[currentHour + 4].temp;
-  hourFiveTemp.textContent = weatherData.days[0].hours[currentHour + 5].temp;
+  nowTemp.textContent = Math.round(weatherData.currentConditions.temp);
+  hourOneTemp.textContent = Math.round(weatherData.days[0].hours[currentHour + 1].temp);
+  hourTwoTemp.textContent = Math.round(weatherData.days[0].hours[currentHour + 2].temp);
+  hourThreeTemp.textContent = Math.round(weatherData.days[0].hours[currentHour + 3].temp);
+  hourFourTemp.textContent = Math.round(weatherData.days[0].hours[currentHour + 4].temp);
+  hourFiveTemp.textContent = Math.round(weatherData.days[0].hours[currentHour + 5].temp);
+
+  // Detailed Current Info
+  const sunrise = document.getElementById("sunrise");
+  const sunset = document.getElementById("sunset");
+  const rainChance = document.getElementById("rain-chance");
+  const humidity = document.getElementById("humidity");
+  const wind = document.getElementById("wind");
+  const feelsLike = document.getElementById("feels-like");
+  const precipitation = document.getElementById("precipitation");
+  const pressure = document.getElementById("pressure");
+  const visibility = document.getElementById("visibility");
+  const uvIndex = document.getElementById("uv-index");
+
+  sunrise.textContent = convertTo12Hour(weatherData.days[0].sunrise);
+  sunset.textContent = convertTo12Hour(weatherData.days[0].sunset);
+  rainChance.textContent = Math.round(weatherData.currentConditions.precipprob);
+  humidity.textContent = weatherData.currentConditions.humidity;
+  wind.textContent = weatherData.currentConditions.windspeed;
+  feelsLike.textContent = Math.round(weatherData.currentConditions.feelslike);
+  precipitation.textContent = weatherData.currentConditions.precip;
+  pressure.textContent = weatherData.currentConditions.pressure;
+  visibility.textContent = weatherData.currentConditions.visibility;
+  uvIndex.textContent = weatherData.currentConditions.uvindex;
 }
 
 export default displayWeatherData;
