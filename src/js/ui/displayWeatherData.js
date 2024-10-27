@@ -1,5 +1,6 @@
 import getNextHours from "../utils/getNextHours";
 import convertTo12Hour from "../utils/convertTo12Hour";
+import getNextDays from "../utils/getNextDays";
 
 function displayWeatherData(weatherData) {
   // Basic Today Info
@@ -38,11 +39,21 @@ function displayWeatherData(weatherData) {
   hourFour.textContent = nextHours[3];
   hourFive.textContent = nextHours[4];
   nowTemp.textContent = Math.round(weatherData.currentConditions.temp);
-  hourOneTemp.textContent = Math.round(weatherData.days[0].hours[currentHour + 1].temp);
-  hourTwoTemp.textContent = Math.round(weatherData.days[0].hours[currentHour + 2].temp);
-  hourThreeTemp.textContent = Math.round(weatherData.days[0].hours[currentHour + 3].temp);
-  hourFourTemp.textContent = Math.round(weatherData.days[0].hours[currentHour + 4].temp);
-  hourFiveTemp.textContent = Math.round(weatherData.days[0].hours[currentHour + 5].temp);
+  hourOneTemp.textContent = Math.round(
+    weatherData.days[0].hours[currentHour + 1].temp
+  );
+  hourTwoTemp.textContent = Math.round(
+    weatherData.days[0].hours[currentHour + 2].temp
+  );
+  hourThreeTemp.textContent = Math.round(
+    weatherData.days[0].hours[currentHour + 3].temp
+  );
+  hourFourTemp.textContent = Math.round(
+    weatherData.days[0].hours[currentHour + 4].temp
+  );
+  hourFiveTemp.textContent = Math.round(
+    weatherData.days[0].hours[currentHour + 5].temp
+  );
 
   // Detailed Current Info
   const sunrise = document.getElementById("sunrise");
@@ -66,6 +77,31 @@ function displayWeatherData(weatherData) {
   pressure.textContent = weatherData.currentConditions.pressure;
   visibility.textContent = weatherData.currentConditions.visibility;
   uvIndex.textContent = weatherData.currentConditions.uvindex;
+
+  // 7-Day Forecast
+  const nextDays = getNextDays();
+  const dayElements = document.querySelectorAll("[data-day]");
+  dayElements.forEach((element) => {
+    const dayNumber = element.getAttribute("data-day");
+    element.textContent = nextDays[dayNumber];
+  });
+  const rainElements = document.querySelectorAll("[data-rain]");
+  rainElements.forEach((element) => {
+    const dayNumber = element.getAttribute("data-rain");
+    element.textContent = `${Math.round(
+      weatherData.days[dayNumber].precipprob
+    )}%`;
+  });
+  const lowElements = document.querySelectorAll("[data-low]");
+  lowElements.forEach((element) => {
+    const dayNumber = element.getAttribute("data-low");
+    element.textContent = Math.round(weatherData.days[dayNumber].tempmin);
+  });
+  const highElements = document.querySelectorAll("[data-high]");
+  highElements.forEach((element) => {
+    const dayNumber = element.getAttribute("data-high");
+    element.textContent = Math.round(weatherData.days[dayNumber].tempmax);
+  });
 }
 
 export default displayWeatherData;
