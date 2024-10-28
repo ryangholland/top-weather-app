@@ -19,15 +19,18 @@
             />
           </div>
           <div class="col-12 col-md-8">
-            <div class="input-group d-flex justify-content-center">
-              <input
-                type="text"
-                class="form-control"
-                placeholder="Enter a ZIP code or a City and State"
-                style="max-width: 350px"
-              />
-              <button class="btn btn-primary" type="button">Search</button>
-            </div>
+            <form id="search-form">
+              <div class="input-group d-flex justify-content-center">
+                <input
+                  type="text"
+                  class="form-control"
+                  placeholder="Enter a ZIP code or a City and State"
+                  style="max-width: 350px"
+                  id="search-input"
+                />
+                <button class="btn btn-primary" type="submit">Search</button>
+              </div>
+            </form>
           </div>
           <div class="col-12 col-md-2">
             <button class="btn btn-light w-75" id="test-btn">

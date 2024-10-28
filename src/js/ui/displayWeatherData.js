@@ -1,6 +1,7 @@
 import getNextHours from "../utils/getNextHours";
 import convertTo12Hour from "../utils/convertTo12Hour";
 import getNextDays from "../utils/getNextDays";
+import formatLocation from "../utils/formatLocation";
 
 function displayWeatherData(weatherData) {
   // Basic Today Info
@@ -11,7 +12,7 @@ function displayWeatherData(weatherData) {
   const highTemp = document.getElementById("high-temp");
   const description = document.getElementById("description");
 
-  city.textContent = weatherData.address;
+  city.textContent = formatLocation(weatherData.resolvedAddress);
   conditions.textContent = weatherData.currentConditions.conditions;
   currentTemp.textContent = Math.round(weatherData.currentConditions.temp);
   lowTemp.textContent = Math.round(weatherData.days[0].tempmin);
