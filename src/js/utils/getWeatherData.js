@@ -3,7 +3,7 @@ import showSpinner from "../ui/showSpinner";
 import hideSpinner from "../ui/hideSpinner";
 import isZip from "./isZip";
 
-async function getWeather(searchInput) {
+async function getWeatherData(searchInput, scale) {
   showSpinner();
 
   const location = await getLocation(searchInput);
@@ -14,7 +14,7 @@ async function getWeather(searchInput) {
   );
   const weatherData = await response.json();
   console.log(weatherData);
-  displayWeatherData(weatherData);
+  displayWeatherData(weatherData, scale);
   hideSpinner();
 }
 
@@ -31,4 +31,4 @@ async function getLocation(searchInput) {
   }
 }
 
-export default getWeather;
+export default getWeatherData;

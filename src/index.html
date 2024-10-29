@@ -33,8 +33,8 @@
             </form>
           </div>
           <div class="col-12 col-md-2">
-            <button class="btn btn-light w-75" id="test-btn">
-              <span id="f-deg">&deg;F</span> /
+            <button class="btn btn-light w-75" id="scale-btn">
+              <span id="f-deg" class="fw-bold">&deg;F</span> /
               <span id="c-deg">&deg;C</span>
             </button>
           </div>
@@ -51,10 +51,12 @@
             <div class="col-12 col-md-4 text-center mb-4 mb-md-0">
               <h2 id="city">City</h2>
               <h3 id="conditions">Conditions</h3>
-              <h1 class="display-1"><span id="current-temp">69</span>&deg;</h1>
+              <h1 class="display-1">
+                <span id="current-temp" data-deg>69</span>&deg;
+              </h1>
               <h4>
-                L: <span id="low-temp">58</span>&deg; | H:
-                <span id="high-temp">72</span>&deg;
+                L: <span id="low-temp" data-deg>58</span>&deg; | H:
+                <span id="high-temp" data-deg>72</span>&deg;
               </h4>
             </div>
             <div
@@ -63,32 +65,42 @@
               <div class="col text-center">
                 <p>Now</p>
                 <img src="./assets/logo.webp" class="img" width="50px" />
-                <p class="mt-2"><span id="now-temp">69</span>&deg;</p>
+                <p class="mt-2"><span id="now-temp" data-deg>69</span>&deg;</p>
               </div>
               <div class="col text-center">
                 <p id="hour-1">7 AM</p>
                 <img src="./assets/logo.webp" class="img" width="50px" />
-                <p class="mt-2"><span id="hour-1-temp">69</span>&deg;</p>
+                <p class="mt-2">
+                  <span id="hour-1-temp" data-deg>69</span>&deg;
+                </p>
               </div>
               <div class="col text-center">
                 <p id="hour-2">8 AM</p>
                 <img src="./assets/logo.webp" class="img" width="50px" />
-                <p class="mt-2"><span id="hour-2-temp">69</span>&deg;</p>
+                <p class="mt-2">
+                  <span id="hour-2-temp" data-deg>69</span>&deg;
+                </p>
               </div>
               <div class="col text-center">
                 <p id="hour-3">9 AM</p>
                 <img src="./assets/logo.webp" class="img" width="50px" />
-                <p class="mt-2"><span id="hour-3-temp">69</span>&deg;</p>
+                <p class="mt-2">
+                  <span id="hour-3-temp" data-deg>69</span>&deg;
+                </p>
               </div>
               <div class="col text-center">
                 <p id="hour-4">10 AM</p>
                 <img src="./assets/logo.webp" class="img" width="50px" />
-                <p class="mt-2"><span id="hour-4-temp">69</span>&deg;</p>
+                <p class="mt-2">
+                  <span id="hour-4-temp" data-deg>69</span>&deg;
+                </p>
               </div>
               <div class="col text-center">
                 <p id="hour-5">11 AM</p>
                 <img src="./assets/logo.webp" class="img" width="50px" />
-                <p class="mt-2"><span id="hour-5-temp">69</span>&deg;</p>
+                <p class="mt-2">
+                  <span id="hour-5-temp" data-deg>69</span>&deg;
+                </p>
               </div>
             </div>
           </div>
@@ -126,7 +138,7 @@
             <div class="row justify-content-center">
               <div class="col-12 col-md-2 text-center">
                 <p class="mb-0 text-info">FEELS LIKE</p>
-                <p><span id="feels-like"></span>&deg;</p>
+                <p><span id="feels-like" data-deg></span>&deg;</p>
               </div>
               <div class="col-12 col-md-2 text-center">
                 <p class="mb-0 text-info">PRECIPITATION</p>
@@ -177,7 +189,10 @@
               <p class="mb-0" data-rain="0">50%</p>
             </div>
             <div class="col-3 col-md-2">
-              <p class="mb-0"><span data-low="0">60</span>&deg; / <span data-high="0">75</span>&deg;</p>
+              <p class="mb-0">
+                <span data-low="0" data-deg>60</span>&deg; /
+                <span data-high="0" data-deg>75</span>&deg;
+              </p>
             </div>
           </div>
           <div
@@ -193,7 +208,10 @@
               <p class="mb-0" data-rain="1">50%</p>
             </div>
             <div class="col-3 col-md-2">
-              <p class="mb-0"><span data-low="1">60</span>&deg; / <span data-high="1">75</span>&deg;</p>
+              <p class="mb-0">
+                <span data-low="1" data-deg>60</span>&deg; /
+                <span data-high="1" data-deg>75</span>&deg;
+              </p>
             </div>
           </div>
           <div
@@ -209,7 +227,10 @@
               <p class="mb-0" data-rain="2">50%</p>
             </div>
             <div class="col-3 col-md-2">
-              <p class="mb-0"><span data-low="2">60</span>&deg; / <span data-high="2">75</span>&deg;</p>
+              <p class="mb-0">
+                <span data-low="2" data-deg>60</span>&deg; /
+                <span data-high="2" data-deg>75</span>&deg;
+              </p>
             </div>
           </div>
           <div
@@ -225,7 +246,10 @@
               <p class="mb-0" data-rain="3">50%</p>
             </div>
             <div class="col-3 col-md-2">
-              <p class="mb-0"><span data-low="3">60</span>&deg; / <span data-high="3">75</span>&deg;</p>
+              <p class="mb-0">
+                <span data-low="3" data-deg>60</span>&deg; /
+                <span data-high="3" data-deg>75</span>&deg;
+              </p>
             </div>
           </div>
           <div
@@ -241,7 +265,10 @@
               <p class="mb-0" data-rain="4">50%</p>
             </div>
             <div class="col-3 col-md-2">
-              <p class="mb-0"><span data-low="4">60</span>&deg; / <span data-high="4">75</span>&deg;</p>
+              <p class="mb-0">
+                <span data-low="4" data-deg>60</span>&deg; /
+                <span data-high="4" data-deg>75</span>&deg;
+              </p>
             </div>
           </div>
           <div
@@ -257,7 +284,10 @@
               <p class="mb-0" data-rain="5">50%</p>
             </div>
             <div class="col-3 col-md-2">
-              <p class="mb-0"><span data-low="5">60</span>&deg; / <span data-high="5">75</span>&deg;</p>
+              <p class="mb-0">
+                <span data-low="5" data-deg>60</span>&deg; /
+                <span data-high="5" data-deg>75</span>&deg;
+              </p>
             </div>
           </div>
           <div
@@ -273,7 +303,10 @@
               <p class="mb-0" data-rain="6">50%</p>
             </div>
             <div class="col-3 col-md-2">
-              <p class="mb-0"><span data-low="6">60</span>&deg; / <span data-high="6">75</span>&deg;</p>
+              <p class="mb-0">
+                <span data-low="6" data-deg>60</span>&deg; /
+                <span data-high="6" data-deg>75</span>&deg;
+              </p>
             </div>
           </div>
         </div>

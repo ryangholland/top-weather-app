@@ -2,9 +2,9 @@ import getNextHours from "../utils/getNextHours";
 import convertTo12Hour from "../utils/convertTo12Hour";
 import getNextDays from "../utils/getNextDays";
 import formatLocation from "../utils/formatLocation";
+import displayCelsius from "./displayCelsius";
 
-
-function displayWeatherData(weatherData) {
+function displayWeatherData(weatherData, scale) {
   // Basic Today Info
   const city = document.getElementById("city");
   const conditions = document.getElementById("conditions");
@@ -104,6 +104,9 @@ function displayWeatherData(weatherData) {
     const dayNumber = element.getAttribute("data-high");
     element.textContent = Math.round(weatherData.days[dayNumber].tempmax);
   });
+
+  // Convert to C if selected
+  if (scale === "c") displayCelsius();
 }
 
 export default displayWeatherData;
