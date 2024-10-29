@@ -3,6 +3,7 @@ import convertTo12Hour from "../utils/convertTo12Hour";
 import getNextDays from "../utils/getNextDays";
 import formatLocation from "../utils/formatLocation";
 
+
 function displayWeatherData(weatherData) {
   // Basic Today Info
   const city = document.getElementById("city");

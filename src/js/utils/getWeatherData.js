@@ -1,9 +1,13 @@
 import displayWeatherData from "../ui/displayWeatherData";
+import showSpinner from "../ui/showSpinner";
+import hideSpinner from "../ui/hideSpinner";
 import isZip from "./isZip";
 
 async function getWeather(searchInput) {
+  showSpinner();
+
   const location = await getLocation(searchInput);
-  console.log(location)
+  console.log(location);
   const response = await fetch(
     `https://weather.visualcrossing.com/VisualCrossingWebServices/rest/services/timeline/${location}?key=BALEELJDVK2MUZUM6KDNHG5BZ`,
     { mode: "cors" }
@@ -11,13 +15,16 @@ async function getWeather(searchInput) {
   const weatherData = await response.json();
   console.log(weatherData);
   displayWeatherData(weatherData);
+  hideSpinner();
 }
 
 async function getLocation(searchInput) {
   if (isZip(searchInput)) {
     const response = await fetch(`http://api.zippopotam.us/us/${searchInput}`);
     const zipInfo = await response.json();
-    console.log(`${zipInfo.places[0]["place name"]}, ${zipInfo.places[0]["state abbreviation"]}`);
+    console.log(
+      `${zipInfo.places[0]["place name"]}, ${zipInfo.places[0]["state abbreviation"]}`
+    );
     return `${zipInfo.places[0]["place name"]}, ${zipInfo.places[0]["state abbreviation"]}`;
   } else {
     return searchInput;
