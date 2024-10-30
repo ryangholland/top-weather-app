@@ -3,6 +3,7 @@ import convertTo12Hour from "../utils/convertTo12Hour";
 import getNextDays from "../utils/getNextDays";
 import formatLocation from "../utils/formatLocation";
 import displayCelsius from "./displayCelsius";
+import getConditionsIcon from "../utils/getConditionsIcon";
 
 function displayWeatherData(weatherData, scale) {
   // Basic Today Info
@@ -56,6 +57,15 @@ function displayWeatherData(weatherData, scale) {
   hourFiveTemp.textContent = Math.round(
     weatherData.days[0].hours[currentHour + 5].temp
   );
+
+  const nextHoursConditions = document.querySelectorAll("[data-conditions-hour");
+  nextHoursConditions.forEach(hour => {
+    const hourNumber = hour.getAttribute("data-conditions-hour");
+    console.log(hourNumber)
+    
+    const conditions = weatherData.days[0].hours[Number(currentHour) + Number(hourNumber)].conditions;
+    hour.src = getConditionsIcon(conditions)
+  })
 
   // Detailed Current Info
   const sunrise = document.getElementById("sunrise");

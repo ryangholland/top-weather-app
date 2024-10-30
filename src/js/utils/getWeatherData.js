@@ -21,6 +21,7 @@ async function getWeatherData(searchInput, scale) {
       displayWeatherData(weatherData, scale);
       hideSpinner();
     } catch (error) {
+      console.log(error);
       handleError("Error: Unable to obtain weather data");
     }
   }
@@ -35,6 +36,7 @@ async function getLocation(searchInput) {
       const zipInfo = await response.json();
       return `${zipInfo.places[0]["place name"]}, ${zipInfo.places[0]["state abbreviation"]}`;
     } catch (error) {
+      console.log(error);
       handleError("Error: Invalid ZIP code");
     }
   } else {
