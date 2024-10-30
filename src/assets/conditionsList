@@ -1,0 +1,92 @@
+snow.svg
+--
+Blowing Or Drifting Snow
+Ice
+Snow
+Heavy Snow
+Light Snow
+
+
+cloud-sleet
+--
+Heavy Freezing Drizzle/Freezing Rain
+Light Freezing Drizzle/Freezing Rain
+Heavy Freezing Rain
+Light Freezing Rain
+Hail Showers
+Hail
+Freezing Drizzle/Freezing Rain
+
+
+cloud-fog
+--
+Freezing Fog
+Smoke Or Haze
+Dust storm
+Fog
+
+tropical-storm
+--
+Funnel Cloud/Tornado
+
+
+lightning
+--
+Lightning Without Thunder
+Thunderstorm Without Precipitation
+
+
+cloud-drizzle
+--
+Mist
+Drizzle
+Precipitation In Vicinity
+Heavy Drizzle
+Diamond Dust
+Light Drizzle
+Heavy Drizzle/Rain
+Light Drizzle/Rain
+
+
+cloud-rain
+--
+Rain
+Rain Showers
+Heavy Rain
+Light Rain
+
+
+cloud-snow
+--
+Heavy Rain And Snow
+Light Rain And Snow
+Snow And Rain Showers
+Snow Showers
+
+
+cloud
+--
+Sky Coverage Decreasing
+Sky Coverage Increasing
+Overcast
+Partially cloudy
+
+sun / moon
+--
+Sky Unchanged
+Clear
+
+cloud-lightning-rain
+--
+Squalls
+Thunderstorm
+
+
+
+
+
+
+
+
+
+

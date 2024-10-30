@@ -33,9 +33,6 @@ async function getLocation(searchInput) {
         `http://api.zippopotam.us/us/${searchInput}`
       );
       const zipInfo = await response.json();
-      console.log(
-        `${zipInfo.places[0]["place name"]}, ${zipInfo.places[0]["state abbreviation"]}`
-      );
       return `${zipInfo.places[0]["place name"]}, ${zipInfo.places[0]["state abbreviation"]}`;
     } catch (error) {
       handleError("Error: Invalid ZIP code");
