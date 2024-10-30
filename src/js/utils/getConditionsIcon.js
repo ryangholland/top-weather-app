@@ -46,7 +46,8 @@ function getConditionsIcon(conditions) {
     "Sky Coverage Decreasing": "./assets/cloud.svg",
     "Sky Coverage Increasing": "./assets/cloud.svg",
     Overcast: "./assets/cloud.svg",
-    "Partially cloudy": "./assets/cloud.svg",
+    
+    "Partially cloudy": "./assets/cloud-sun.svg",
 
     "Sky Unchanged": "./assets/sun.svg",
     Clear: "./assets/sun.svg",

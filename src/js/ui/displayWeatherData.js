@@ -58,14 +58,16 @@ function displayWeatherData(weatherData, scale) {
     weatherData.days[0].hours[currentHour + 5].temp
   );
 
-  const nextHoursConditions = document.querySelectorAll("[data-conditions-hour");
-  nextHoursConditions.forEach(hour => {
+  const nextHoursConditions = document.querySelectorAll(
+    "[data-conditions-hour]"
+  );
+  nextHoursConditions.forEach((hour) => {
     const hourNumber = hour.getAttribute("data-conditions-hour");
-    console.log(hourNumber)
-    
-    const conditions = weatherData.days[0].hours[Number(currentHour) + Number(hourNumber)].conditions;
-    hour.src = getConditionsIcon(conditions)
-  })
+    const conditions =
+      weatherData.days[0].hours[Number(currentHour) + Number(hourNumber)]
+        .conditions;
+    hour.src = getConditionsIcon(conditions);
+  });
 
   // Detailed Current Info
   const sunrise = document.getElementById("sunrise");
@@ -113,6 +115,13 @@ function displayWeatherData(weatherData, scale) {
   highElements.forEach((element) => {
     const dayNumber = element.getAttribute("data-high");
     element.textContent = Math.round(weatherData.days[dayNumber].tempmax);
+  });
+
+  const nextDaysConditions = document.querySelectorAll("[data-conditions-day]");
+  nextDaysConditions.forEach((day) => {
+    const dayNumber = day.getAttribute("data-conditions-day");
+    const conditions = weatherData.days[dayNumber].conditions;
+    day.src = getConditionsIcon(conditions);
   });
 
   // Convert to C if selected
