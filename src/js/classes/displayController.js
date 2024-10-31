@@ -25,49 +25,46 @@ class DisplayController {
     description.textContent = weatherData.description;
 
     // Next 5 Hours
-    const currentHour = new Date().getHours();
+    const currentHour = new Date().getHours() + 6; // Testing night mode
     const nextHours = getNextHours(currentHour);
 
     const hourElements = document.querySelectorAll("[data-hour]");
-    hourElements.forEach(element => {
+    hourElements.forEach((element) => {
       const hourNumber = element.getAttribute("data-hour");
-      element.textContent = nextHours[hourNumber]
-    })
-  
-    const nowTemp = document.getElementById("now-temp");
-    const hourOneTemp = document.getElementById("hour-1-temp");
-    const hourTwoTemp = document.getElementById("hour-2-temp");
-    const hourThreeTemp = document.getElementById("hour-3-temp");
-    const hourFourTemp = document.getElementById("hour-4-temp");
-    const hourFiveTemp = document.getElementById("hour-5-temp");
+      element.textContent = nextHours[hourNumber];
+    });
 
- 
+    const nowTemp = document.getElementById("now-temp");
     nowTemp.textContent = Math.round(weatherData.currentConditions.temp);
-    hourOneTemp.textContent = Math.round(
-      weatherData.days[0].hours[currentHour + 1].temp
-    );
-    hourTwoTemp.textContent = Math.round(
-      weatherData.days[0].hours[currentHour + 2].temp
-    );
-    hourThreeTemp.textContent = Math.round(
-      weatherData.days[0].hours[currentHour + 3].temp
-    );
-    hourFourTemp.textContent = Math.round(
-      weatherData.days[0].hours[currentHour + 4].temp
-    );
-    hourFiveTemp.textContent = Math.round(
-      weatherData.days[0].hours[currentHour + 5].temp
-    );
+
+    const hourTempElements = document.querySelectorAll("[data-hour-temp]");
+    hourTempElements.forEach((element) => {
+      const hourNumber = element.getAttribute("data-hour-temp");
+      let hour = Number(currentHour) + Number(hourNumber);
+
+      if (hour < 24) {
+        element.textContent = Math.round(weatherData.days[0].hours[hour].temp);
+      } else {
+        hour = hour - 24;
+        element.textContent = Math.round(weatherData.days[1].hours[hour].temp);
+      }
+    });
 
     const nextHoursConditions = document.querySelectorAll(
       "[data-conditions-hour]"
     );
-    nextHoursConditions.forEach((hour) => {
-      const hourNumber = hour.getAttribute("data-conditions-hour");
-      const conditions =
-        weatherData.days[0].hours[Number(currentHour) + Number(hourNumber)]
-          .conditions;
-      hour.src = WeatherIcon.getIcon(conditions);
+    nextHoursConditions.forEach((element) => {
+      const hourNumber = element.getAttribute("data-conditions-hour");
+      let conditions;
+      let hour = Number(currentHour) + Number(hourNumber);
+      if (hour < 24) {
+        conditions = weatherData.days[0].hours[hour].conditions;
+      } else {
+        hour = hour - 24;
+        conditions = weatherData.days[1].hours[hour].conditions;
+      }
+
+      element.src = WeatherIcon.getIcon(conditions);
     });
 
     // Detailed Current Info
@@ -146,10 +143,10 @@ class DisplayController {
   }
 
   changeDegreesToCelsius() {
-    const degreeElements = document.querySelectorAll("[data-deg");
+    const degreeElements = document.querySelectorAll("[data-deg]");
 
     degreeElements.forEach((element) => {
-      let degree = +element.textContent;
+      let degree = Number(element.textContent);
       element.textContent = Math.round(fahrenheitToCelsius(degree));
     });
   }
