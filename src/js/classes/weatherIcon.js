@@ -1,5 +1,5 @@
 class WeatherIcon {
-  static getIcon(conditions) {
+  static getIcon(conditions, isNight = false) {
     const weatherIcons = {
       "Blowing Or Drifting Snow": "./assets/snow.svg",
       Ice: "./assets/snow.svg",
@@ -57,7 +57,16 @@ class WeatherIcon {
       Thunderstorm: "./assets/cloud-lightning-rain.svg",
     };
 
-    return weatherIcons[conditions] || "./assets/logo.webp";
+    if (isNight && conditions == "Partially cloudy") {
+      return "./assets/cloud-moon.svg";
+    } else if (
+      isNight &&
+      (conditions == "Clear" || conditions == "Sky Unchanged")
+    ) {
+      return "./assets/moon.svg";
+    } else {
+      return weatherIcons[conditions] || "./assets/logo.webp";
+    }
   }
 }
 

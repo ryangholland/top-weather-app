@@ -4,6 +4,7 @@ import getNextDays from "../utils/getNextDays";
 import formatLocation from "../utils/formatLocation";
 import WeatherIcon from "./weatherIcon";
 import fahrenheitToCelsius from "../utils/fahrenheitToCelsius";
+import isNight from "../utils/isNight";
 
 class DisplayController {
   render(weatherData, scale) {
@@ -25,7 +26,7 @@ class DisplayController {
     description.textContent = weatherData.description;
 
     // Next 5 Hours
-    const currentHour = new Date().getHours() + 6; // Testing night mode
+    const currentHour = new Date().getHours(); 
     const nextHours = getNextHours(currentHour);
 
     const hourElements = document.querySelectorAll("[data-hour]");
@@ -64,7 +65,12 @@ class DisplayController {
         conditions = weatherData.days[1].hours[hour].conditions;
       }
 
-      element.src = WeatherIcon.getIcon(conditions);
+      const night = isNight(
+        weatherData.currentConditions.sunrise,
+        weatherData.currentConditions.sunset,
+        hour
+      );
+      element.src = WeatherIcon.getIcon(conditions, night);
     });
 
     // Detailed Current Info
