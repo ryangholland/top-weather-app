@@ -13,6 +13,9 @@ class WeatherApp {
   }
 
   async getData(searchInput) {
+    this.displayController.showSpinner();
+    this.displayController.hideError();
+
     const location = isZip(searchInput)
       ? await this.zipService.getLocation(searchInput)
       : searchInput;
@@ -20,11 +23,21 @@ class WeatherApp {
     if (location) {
       try {
         this.weatherData = await this.weatherService.fetchWeather(location);
-        this.displayController.render(this.weatherData, this.scale);
       } catch (error) {
-        console.error("Error fetching weather data:", error);
+        this.weatherData = {};
+        const msg = "Error fetching weather data";
+        console.error(`${msg}:`, error);
+        this.displayController.showError(msg);
       }
+
+      if (this.weatherData.address)
+        this.displayController.render(this.weatherData, this.scale);
+    } else {
+      const msg = "Error fetching ZIP code";
+      this.displayController.showError(msg);
     }
+
+    this.displayController.hideSpinner();
   }
 
   changeScale() {

@@ -155,6 +155,34 @@ class DisplayController {
       element.textContent = Math.round(fahrenheitToCelsius(degree));
     });
   }
+
+  showSpinner() {
+    const spinnerDiv = document.getElementById("spinner");
+    spinnerDiv.classList.remove("d-none");
+  }
+
+  hideSpinner() {
+    const spinnerDiv = document.getElementById("spinner");
+    spinnerDiv.classList.add("d-none");
+  }
+
+  showError(error) {
+    const weatherContentDiv = document.getElementById("weather-content");
+    const errorDiv = document.getElementById("error-div");
+    const errorMsg = document.getElementById("error-msg");
+
+    weatherContentDiv.classList.add("d-none");
+    errorDiv.classList.remove("d-none");
+    errorMsg.textContent = error;
+  }
+
+  hideError() {
+    const errorDiv = document.getElementById("error-div");
+    const errorMsg = document.getElementById("error-msg");
+
+    errorMsg.textContent = "";
+    errorDiv.classList.add("d-none");
+  }
 }
 
 export default DisplayController;
