@@ -27,11 +27,13 @@ class DisplayController {
     // Next 5 Hours
     const currentHour = new Date().getHours();
     const nextHours = getNextHours(currentHour);
-    const hourOne = document.getElementById("hour-1");
-    const hourTwo = document.getElementById("hour-2");
-    const hourThree = document.getElementById("hour-3");
-    const hourFour = document.getElementById("hour-4");
-    const hourFive = document.getElementById("hour-5");
+
+    const hourElements = document.querySelectorAll("[data-hour]");
+    hourElements.forEach(element => {
+      const hourNumber = element.getAttribute("data-hour");
+      element.textContent = nextHours[hourNumber]
+    })
+  
     const nowTemp = document.getElementById("now-temp");
     const hourOneTemp = document.getElementById("hour-1-temp");
     const hourTwoTemp = document.getElementById("hour-2-temp");
@@ -39,11 +41,7 @@ class DisplayController {
     const hourFourTemp = document.getElementById("hour-4-temp");
     const hourFiveTemp = document.getElementById("hour-5-temp");
 
-    hourOne.textContent = nextHours[0];
-    hourTwo.textContent = nextHours[1];
-    hourThree.textContent = nextHours[2];
-    hourFour.textContent = nextHours[3];
-    hourFive.textContent = nextHours[4];
+ 
     nowTemp.textContent = Math.round(weatherData.currentConditions.temp);
     hourOneTemp.textContent = Math.round(
       weatherData.days[0].hours[currentHour + 1].temp

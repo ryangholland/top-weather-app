@@ -1,5 +1,5 @@
 function getNextHours(currentHour) {
-  const hourKeys = [
+  const hourValues = [
     "12 AM",
     "1 AM",
     "2 AM",
@@ -29,7 +29,8 @@ function getNextHours(currentHour) {
   const nextFiveHours = [];
 
   for (let i = currentHour + 1; i < currentHour + 6; i++) {
-    nextFiveHours.push(hourKeys[i]);
+    const key = i < 24 ? i : i - 24;
+    nextFiveHours.push(hourValues[key]);
   }
 
   return nextFiveHours;

@@ -46,8 +46,6 @@
       <div id="weather-content" class="d-none">
         <div class="container">
           <!-- Basic Today Info -->
-          <!-- Add arrows for 3 screens of hours  -->
-          <!-- 6 > | < 5 > | < 6 -->
           <div class="row">
             <div class="col-12 col-md-4 text-center mb-4 mb-md-0">
               <h2 id="city">City</h2>
@@ -69,35 +67,35 @@
                 <p class="mt-2"><span id="now-temp" data-deg>69</span>&deg;</p>
               </div>
               <div class="col text-center">
-                <p id="hour-1">7 AM</p>
+                <p id="hour-1" data-hour="0">7 AM</p>
                 <img src="./assets/logo.webp" class="img" width="50px" data-conditions-hour="1" />
                 <p class="mt-2">
                   <span id="hour-1-temp" data-deg>69</span>&deg;
                 </p>
               </div>
               <div class="col text-center">
-                <p id="hour-2">8 AM</p>
+                <p id="hour-2" data-hour="1">8 AM</p>
                 <img src="./assets/logo.webp" class="img" width="50px" data-conditions-hour="2" />
                 <p class="mt-2">
                   <span id="hour-2-temp" data-deg>69</span>&deg;
                 </p>
               </div>
               <div class="col text-center">
-                <p id="hour-3">9 AM</p>
+                <p id="hour-3" data-hour="2">9 AM</p>
                 <img src="./assets/logo.webp" class="img" width="50px" data-conditions-hour="3" />
                 <p class="mt-2">
                   <span id="hour-3-temp" data-deg>69</span>&deg;
                 </p>
               </div>
               <div class="col text-center">
-                <p id="hour-4">10 AM</p>
+                <p id="hour-4" data-hour="3">10 AM</p>
                 <img src="./assets/logo.webp" class="img" width="50px" data-conditions-hour="4" />
                 <p class="mt-2">
                   <span id="hour-4-temp" data-deg>69</span>&deg;
                 </p>
               </div>
               <div class="col text-center">
-                <p id="hour-5">11 AM</p>
+                <p id="hour-5" data-hour="4">11 AM</p>
                 <img src="./assets/logo.webp" class="img" width="50px" data-conditions-hour="5" />
                 <p class="mt-2">
                   <span id="hour-5-temp" data-deg>69</span>&deg;
@@ -313,12 +311,14 @@
         </div>
       </div>
 
+      <!-- Spinner -->
       <div id="spinner" class="d-none d-flex justify-content-center mt-4">
         <div class="spinner-border" role="status">
           <span class="visually-hidden">Loading...</span>
         </div>
       </div>
 
+      <!-- Errors -->
       <div id="error-div" class="d-none text-center text-danger">
         <p id="error-msg">hello</p>
       </div>
