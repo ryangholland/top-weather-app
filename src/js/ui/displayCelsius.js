@@ -1,4 +1,4 @@
-import { fahrenheitToCelsius } from "../utils/convertTemp";
+import { fahrenheitToCelsius } from "../utils/fahrenheitToCelsius";
 
 function displayCelsius() {
   const degreeElements = document.querySelectorAll("[data-deg");

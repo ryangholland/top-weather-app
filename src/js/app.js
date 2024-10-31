@@ -14,7 +14,7 @@ function init() {
   const scaleBtn = document.getElementById("scale-btn");
   scaleBtn.addEventListener("click", () => {
     weatherApp.changeScale();
-  })
+  });
 }
 
 export default init;

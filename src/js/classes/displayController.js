@@ -3,6 +3,7 @@ import convertTo12Hour from "../utils/convertTo12Hour";
 import getNextDays from "../utils/getNextDays";
 import formatLocation from "../utils/formatLocation";
 import WeatherIcon from "./weatherIcon";
+import fahrenheitToCelsius from "../utils/fahrenheitToCelsius";
 
 class DisplayController {
   render(weatherData, scale) {
@@ -129,6 +130,8 @@ class DisplayController {
       const conditions = weatherData.days[dayNumber].conditions;
       day.src = WeatherIcon.getIcon(conditions);
     });
+
+    if (scale === "c") this.changeDegreesToCelsius();
   }
 
   changeScaleDisplay(scale) {
@@ -142,6 +145,15 @@ class DisplayController {
       fDeg.classList.remove("fw-bold");
       cDeg.classList.add("fw-bold");
     }
+  }
+
+  changeDegreesToCelsius() {
+    const degreeElements = document.querySelectorAll("[data-deg");
+
+    degreeElements.forEach((element) => {
+      let degree = +element.textContent;
+      element.textContent = Math.round(fahrenheitToCelsius(degree));
+    });
   }
 }
 

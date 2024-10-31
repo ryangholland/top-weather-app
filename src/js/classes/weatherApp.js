@@ -30,6 +30,10 @@ class WeatherApp {
   changeScale() {
     this.scale = this.scale === "f" ? "c" : "f";
     this.displayController.changeScaleDisplay(this.scale);
+
+    if (this.weatherData.address) {
+      this.displayController.render(this.weatherData, this.scale);
+    }
   }
 }
 
