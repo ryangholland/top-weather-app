@@ -5,6 +5,7 @@ import formatLocation from "../utils/formatLocation";
 import WeatherIcon from "./weatherIcon";
 import fahrenheitToCelsius from "../utils/fahrenheitToCelsius";
 import isNight from "../utils/isNight";
+import strToDate from "../utils/strToDate";
 
 class DisplayController {
   render(weatherData, scale) {
@@ -26,7 +27,7 @@ class DisplayController {
     description.textContent = weatherData.description;
 
     // Next 5 Hours
-    const currentHour = new Date().getHours(); 
+    const currentHour = strToDate(weatherData.currentConditions.datetime).getHours();
     const nextHours = getNextHours(currentHour);
 
     const hourElements = document.querySelectorAll("[data-hour]");
