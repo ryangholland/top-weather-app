@@ -6,6 +6,7 @@ import WeatherIcon from "./weatherIcon";
 import fahrenheitToCelsius from "../utils/fahrenheitToCelsius";
 import isNight from "../utils/isNight";
 import strToDate from "../utils/strToDate";
+import getPrimaryCondition from "../utils/getPrimaryCondition";
 
 class DisplayController {
   render(weatherData, scale) {
@@ -27,7 +28,9 @@ class DisplayController {
     description.textContent = weatherData.description;
 
     // Next 5 Hours
-    const currentHour = strToDate(weatherData.currentConditions.datetime).getHours();
+    const currentHour = strToDate(
+      weatherData.currentConditions.datetime
+    ).getHours();
     const nextHours = getNextHours(currentHour);
 
     const hourElements = document.querySelectorAll("[data-hour]");
@@ -129,7 +132,9 @@ class DisplayController {
     );
     nextDaysConditions.forEach((day) => {
       const dayNumber = day.getAttribute("data-conditions-day");
-      const conditions = weatherData.days[dayNumber].conditions;
+      const conditions = getPrimaryCondition(
+        weatherData.days[dayNumber].conditions
+      );
       day.src = WeatherIcon.getIcon(conditions);
     });
 
